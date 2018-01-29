@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -17,10 +18,6 @@ body {
   clear: both;
 }
 
-.hidden {
-  display: none;
-}
-
 .container nav {
   width: 400px;
   height: 100vh;
@@ -30,25 +27,112 @@ body {
 
 .container nav header {
   width: 100%;
+  height: 50px;
   position: relative;
+  margin: 50px 0;
+  /*media query toggle start*/
+  /* jq toggle class */
+  /*media query toggle end*/
 }
 
-.container nav header .i_menu {
-  color: #fff;
+.container nav header .menu {
+  width: 11%;
+  height: 100%;
+  background: #fff;
+  float: left;
 }
 
-.container nav header .i_remove {
-  color: #fff;
+.container nav header .bar {
+  width: 25px;
+  height: 10px;
 }
 
-.container nav header h1 {
+.container nav header .bar::after,
+.container nav header .bar::before {
+  width: 45px;
+  height: 10px;
+}
+
+.container nav header .bar {
+  position: relative;
+  -webkit-transform: translateY(25px);
+  -ms-transform: translateY(25px);
+  transform: translateY(25px);
+  -webkit-transition: all 0ms 300ms;
+  -o-transition: all 0ms 300ms;
+  transition: all 0ms 300ms;
+}
+
+.container nav header .bar::after {
+  content: '';
   position: absolute;
-  top: 25px;
-  left: 28%;
+  left: 0;
+  top: 15px;
+  background: #fff;
+  -webkit-transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.container nav header .bar::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  background: #fff;
+  -webkit-transition: bottom 0.3s 0.3s cubic-bezier(1, 1, 1, 1), -webkit-transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 0.3s 0.3s cubic-bezier(1, 1, 1, 1), -webkit-transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: bottom 0.3s 0.3s cubic-bezier(1, 1, 1, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 0.3s 0.3s cubic-bezier(1, 1, 1, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 0.3s 0.3s cubic-bezier(1, 1, 1, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.container nav header .bar.animate {
+  background: rgba(255, 255, 255, 0);
+  /*移除中間那槓變成x*/
+}
+
+.container nav header .bar.animate::after {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.container nav header .bar.animate::before {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition: bottom 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: bottom 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.container nav header .title_white {
+  width: 78%;
+  height: 60%;
+  float: left;
+}
+
+.container nav header .title_white h1 {
+  width: 100%;
+  height: 60%;
+  text-align: center;
+  padding: 15px 0 15px 0;
 }
 
 .container nav header .circle {
-  top: 0;
+  top: -10%;
   right: 0;
   position: absolute;
   width: 80px;
@@ -83,10 +167,6 @@ body {
 .container nav ul li a:hover {
   border-bottom: 3px solid #94294c;
   color: #94294c;
-}
-
-.container .navBar {
-  display: none;
 }
 
 .container .content {
@@ -136,7 +216,7 @@ body {
 }
 
 .container .content .card-container .card h5 {
-  height: 120px;
+  height: 160px;
   float: left;
   -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
@@ -158,27 +238,39 @@ body {
     float: none;
     width: 500px;
     height: auto;
+    padding: 20px 0;
   }
   .container nav header {
     width: 500px;
-    position: relative;
-    padding: 25px;
+    height: 50px;
+    margin: 0;
+    /*media query toggle start*/
   }
-  .container nav header .i_menu {
-    color: #000;
+  .container nav header .menu {
+    width: 11%;
+    height: 40px;
+    padding: 0 16px;
+    cursor: pointer;
   }
-  .container nav header .i_remove {
-    color: #000;
+  .container nav header .bar {
+    background: #000;
+    top: -5px;
   }
-  .container nav header .open_bar {
-    width: 5%;
-    display: inline-block;
+  .container nav header .bar::after {
+    content: '';
+    background: #000;
   }
-  .container nav header h1 {
-    width: 35%;
-    position: absolute;
-    top: 35px;
-    left: 28%;
+  .container nav header .bar::before {
+    content: '';
+    background: #000;
+  }
+  .container nav header .title_white {
+    padding-left: 10%;
+  }
+  .container nav header .title_white h1 {
+    width: 75%;
+    font-size: 27px;
+    padding: 10px 0;
   }
   .container nav header .circle {
     width: 50px;
@@ -186,9 +278,9 @@ body {
     background-color: #fff;
     border: 12px solid #000;
     border-radius: 50%;
-    -webkit-transform: translate(-100%, 50%);
-    -ms-transform: translate(-100%, 50%);
-    transform: translate(-100%, 50%);
+    -webkit-transform: translate(-90%, 10%);
+    -ms-transform: translate(-90%, 10%);
+    transform: translate(-90%, 10%);
   }
   .container nav header .hide-large {
     display: none;
@@ -197,34 +289,10 @@ body {
     position: relative;
     display: none;
     float: none;
-    left: -23px;
+    left: -15px;
   }
   .container nav ul.show {
     display: block;
-  }
-  .container .navBar {
-    float: none;
-    display: inline-block;
-    width: 100%;
-    background: #fff;
-  }
-  .container .navBar .open_bar {
-    width: 10%;
-    float: left;
-  }
-  .container .navBar .h1_bar {
-    width: 75%;
-    height: 50px;
-    float: left;
-    text-align: center;
-    line-height: 1.5;
-  }
-  .container .navBar .circle_bar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #000;
-    float: right;
   }
   .container .content {
     width: 100%;
@@ -260,6 +328,6 @@ body {
     float: none;
   }
   .container .content .card-container .card h5 {
-    height: 140px;
+    height: 130px;
   }
 }

@@ -16,10 +16,6 @@ body{
     clear: both;
   }
 }
-.hidden {
-  display: none;
-}
-
 .container{
 
   //left
@@ -30,20 +26,87 @@ body{
     float: left;
     header{
       width: 100%;
+      height: 50px;
       position: relative;
-      .i_menu{
-        color: #fff;
+      margin: 50px 0;
+
+      /*media query toggle start*/
+      .menu{
+        width: 11%;
+        height: 100%;
+        background: #fff;
+        float: left;
       }
-      .i_remove{
-        color:#fff;
+      .bar{
+        width: 25px;
+        height: 10px;
       }
-      h1{
+      .bar::after,
+      .bar::before{
+        width: 45px;
+        height: 10px;
+
+      }
+      .bar{
+        position: relative;
+        transform:translateY(25px);
+        transition:all 0ms 300ms;
+      }
+      .bar::after{
+        content:'';
         position: absolute;
-        top: 25px;
-        left:28%;
+        left: 0;
+        top: 15px;
+        background: #fff;
+        transition:
+                top .3s .3s cubic-bezier(.23,1,.32,1),
+                transform .3s cubic-bezier(.23,1,.32,1);
       }
-      .circle{
+      .bar::before{
+        content:'';
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+        background: #fff;
+        transition:
+                bottom .3s .3s cubic-bezier(1,1,1,1),
+                transform .3s cubic-bezier(.23,1,.32,1);
+      }
+
+      /* jq toggle class */
+      .bar.animate{
+        background: rgba(255,255,255,0);/*移除中間那槓變成x*/
+      }
+      .bar.animate::after{
         top: 0;
+        transform: rotate(45deg);
+        transition:
+                top .3s .3s cubic-bezier(.23,1,.32,1),
+                transform .3s .3s cubic-bezier(.23,1,.32,1);
+      }
+      .bar.animate::before{
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition:
+                bottom .3s .3s cubic-bezier(.23,1,.32,1),
+                transform .3s .3s cubic-bezier(.23,1,.32,1);
+      }
+      /*media query toggle end*/
+
+      .title_white{
+        width: 78%;
+        height: 60%;
+        float: left;
+        h1{
+          width: 100%;
+          height: 60%;
+          text-align: center;
+          padding: 15px 0 15px 0;
+        }
+      }
+
+      .circle{
+        top: -10%;
         right: 0;
         position: absolute;
         width: 80px;
@@ -73,10 +136,6 @@ body{
         }
       }
     }
-  }
-  //重新整理
-  .navBar{
-    display: none;
   }
 
   //rigth
@@ -118,7 +177,7 @@ body{
         float: left;
         padding: 30px ;
         h5{
-          height: 120px;
+          height: 160px;
           float: left;
           -webkit-writing-mode: vertical-rl;
           writing-mode: vertical-rl;
@@ -144,33 +203,49 @@ body{
       float: none;
       width: 500px;
       height: auto;
+      padding: 20px 0;
       header{
         width: 500px;
-        position: relative;
-        padding: 25px;
-        .i_menu{
-          color: #000;
+        height: 50px;
+        margin: 0;
+
+        /*media query toggle start*/
+        .menu{
+          width: 11%;
+          height: 40px;
+          padding: 0 16px;
+          cursor: pointer;
         }
-        .i_remove{
-          color:#000;
+        .bar{
+          background: #000;
+          top: -5px;
         }
-        .open_bar{
-          width: 5%;
-          display: inline-block;
+        .bar::after {
+          content: '';
+          background: #000;
         }
-        h1{
-          width: 35%;
-          position: absolute;
-          top: 35px;
-          left:28%;
+        .bar::before {
+          content: '';
+          background: #000;
         }
+
+        .title_white{
+          padding-left: 10%;
+
+          h1{
+            width: 75%;
+            font-size: 27px;
+            padding: 10px 0;
+          }
+        }
+
         .circle{
           width: 50px;
           height: 50px;
           background-color: #fff;
           border:12px solid #000;
           border-radius: 50%;
-          transform: translate(-100%,50%);
+          transform: translate(-90%,10%);
         }
         .hide-large{
           display: none;
@@ -180,37 +255,13 @@ body{
         position: relative;
         display: none;
         float: none;
-        left: -23px;
+        left: -15px;
         &.show {
           display: block;
         }
       }
     }
-    .navBar{
-      float: none;
-      display: inline-block;
-      width: 100%;
-      background: #fff;
 
-      .open_bar{
-        width: 10%;
-        float: left;
-      }
-      .h1_bar{
-        width: 75%;
-        height: 50px;
-        float: left;
-        text-align: center;
-        line-height: 1.5;
-      }
-      .circle_bar{
-        width: 50px;
-        height: 50px;
-        border-radius:50%;
-        background-color: #000;
-        float: right;
-      }
-    }
     .content{
       width: 100%;
       float: none;
@@ -221,7 +272,6 @@ body{
         background-image: url("http://i.imgur.com/KfUmCKk.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-        //position: relative;
 
         .title{
           top: 25%;
@@ -246,7 +296,7 @@ body{
           height: 100%;
           float:none;
           h5{
-            height: 140px;
+            height: 130px;
           }
         }
       }
