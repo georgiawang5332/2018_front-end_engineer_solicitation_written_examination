@@ -212,11 +212,11 @@ body {
   width: 33.33333%;
   height: 230px;
   float: left;
-  padding: 30px;
+  padding: 5px;
 }
 
 .container .content .card-container .card h5 {
-  height: 160px;
+  height: 240px;
   float: left;
   -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
@@ -326,8 +326,12 @@ body {
     width: 100%;
     height: 100%;
     float: none;
+    padding: 20px 0;
   }
   .container .content .card-container .card h5 {
-    height: 130px;
+    height: 90px;
+  }
+  .container .content .card-container .card .c_h5 {
+    height: 140px;
   }
 }
