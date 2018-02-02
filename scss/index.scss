@@ -170,23 +170,31 @@ body{
       width: 100%;
       height: 100%;
       line-height: 1.5;
-      padding: 15px;
+      padding-top: 3%;
       .card{
         width: 33.33333%;
-        height: 230px;
+        height: auto;
         float: left;
-        padding: 5px ;
-        h5{
-          height: 240px;
+
+        .t_h5{
+          width: 20%;
+          height: auto;
           float: left;
-          -webkit-writing-mode: vertical-rl;
-          writing-mode: vertical-rl;
-          font-size: 40px;
+          h5{
+            -webkit-writing-mode: vertical-rl;
+            writing-mode: vertical-rl;
+            margin: 0 auto;
+            padding: 10px;
+            font-size: 40px;
+          }
         }
-        p{
-          width: 100%;
-          font-size: 18px;
-          display: inline;
+        .t_p{
+          width: 80%;
+          height:auto;
+          float: left;
+          p{
+            padding: 10px;
+          }
         }
       }
     }
@@ -291,16 +299,29 @@ body{
         }
       }
       .card-container{
+        width: 100%;
+        height: 100%;
+        float: none;
         .card{
           width: 100%;
-          height: 100%;
-          float:none;
-          padding: 20px 0;
-          h5{
-            height: 90px;
+          height: 10%;
+          .t_h5{
+            width: 12%;
+            height:20%;
+            h5{
+              -webkit-writing-mode: vertical-rl;
+              writing-mode: vertical-rl;
+              padding: 15px 0;
+              margin: 0 auto;
+              font-size: 30px;
+            }
           }
-          .c_h5 {
-            height: 140px;
+          .t_p{
+            width: 85%;
+            height:auto;
+            p{
+
+            }
           }
         }
       }

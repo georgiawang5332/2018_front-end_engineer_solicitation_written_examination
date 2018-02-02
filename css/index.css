@@ -205,29 +205,38 @@ body {
   width: 100%;
   height: 100%;
   line-height: 1.5;
-  padding: 15px;
+  padding-top: 3%;
 }
 
 .container .content .card-container .card {
   width: 33.33333%;
-  height: 230px;
+  height: auto;
   float: left;
-  padding: 5px;
 }
 
-.container .content .card-container .card h5 {
-  height: 240px;
+.container .content .card-container .card .t_h5 {
+  width: 20%;
+  height: auto;
   float: left;
+}
+
+.container .content .card-container .card .t_h5 h5 {
   -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
+  margin: 0 auto;
+  padding: 10px;
   font-size: 40px;
 }
 
-.container .content .card-container .card p {
-  width: 100%;
-  font-size: 18px;
-  display: inline;
+.container .content .card-container .card .t_p {
+  width: 80%;
+  height: auto;
+  float: left;
+}
+
+.container .content .card-container .card .t_p p {
+  padding: 10px;
 }
 
 @media screen and (max-width: 500px) {
@@ -322,16 +331,29 @@ body {
     font-size: 16px;
     margin: 0 auto;
   }
-  .container .content .card-container .card {
+  .container .content .card-container {
     width: 100%;
     height: 100%;
     float: none;
-    padding: 20px 0;
   }
-  .container .content .card-container .card h5 {
-    height: 90px;
+  .container .content .card-container .card {
+    width: 100%;
+    height: 10%;
   }
-  .container .content .card-container .card .c_h5 {
-    height: 140px;
+  .container .content .card-container .card .t_h5 {
+    width: 12%;
+    height: 20%;
+  }
+  .container .content .card-container .card .t_h5 h5 {
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    padding: 15px 0;
+    margin: 0 auto;
+    font-size: 30px;
+  }
+  .container .content .card-container .card .t_p {
+    width: 85%;
+    height: auto;
   }
 }
